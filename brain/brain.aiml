@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <aiml>
+	<!-- AIML for kitabot -->
+	<!--set name="ulanbot"-->
 	<category><pattern>HALO</pattern><template>Hai! ada yang bisa <bot name="name"/> bantu?</template></category>
 	<category><pattern>*</pattern><template>maaf?</template></category>
 </aiml>
