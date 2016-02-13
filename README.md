@@ -1,5 +1,5 @@
-# Kitabot Front-end
-Front-end components for kitabot
+# Kitabot 
+Ask.fm bot
 
 ## Credits
 * [`vickydasta`](http://vickydasta.github.io)
