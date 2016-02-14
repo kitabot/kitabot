@@ -29,9 +29,10 @@
       <span class="mdl-layout-title">Ulan</span>
     </div>
     <!-- Tabs -->
-    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+    <!-- <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
       <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Questions</a>
-    </div>
+      <a href="#fixed-tab-2" class="mdl-layout__tab">Ask</a>
+    </div> -->
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Ulan</span>
@@ -40,39 +41,27 @@
     <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
       <div class="page-content">
         <center>
-        <!--         <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            Ulan
-          </a>
-        </div> -->
-<!--         <div class="mdl-card__menu">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">share</i>
-          </button>
-        </div> -->
-      </div>
+         <br />
+		<form action="/apps" method="post">
+       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="input">
+        <label class="mdl-textfield__label" for="input">Ask..</label>
+        <p>{{data}} </p>
+       </div>
+       <br />
+        <button class="mdl-button mdl-js-button mdl-button--accent">
+          submit
+        </button>     
+       </form>
       </center>
       </div>
     </section>
-
-    <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-      <div class="page-content">
-       <center>
-         <br />
-         <form class="form-inline" required="true" action="/apps" method="post">
-       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" name="text" type="text" id="input">
-        <label class="mdl-textfield__label" for="input">Ask..</label></div><br />
-        <button class="mdl-button mdl-js-button mdl-button--accent">
-          submit
-        </button>
-        <textarea style="width:100%;" rows="10" name="result">{{data}}</textarea>      
-      </form>
-      </center>
-      </div>
-    </section>  
   </main>
 </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/keymaster/1.6.1/keymaster.min.js"></script>
+  <script>
+    key('/', function(){ window.location.href = 'chat.html' });
+  </script>  
   <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
 </body>
 </html>

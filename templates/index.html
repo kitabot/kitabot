@@ -1,40 +1,71 @@
 <html>
-<!--link rel="stylesheet" media="screen" href ="{{ url_for('static', filename='css/bootstrap.min.css') }}"-->
 <meta name="viewport" content = "width=device-width, initial-scale=1.0">
 <head>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
 </head>
 
-<style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
+<style type="text/css">
+  body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+input[type="text"] {
+    font-size:22px
+}
+
+.navbar {
+  margin-bottom: 20px;
+  background-color: #0da6e8;
+}
 </style>
 
 <body>
-    <div class="container">
-      <div class="jumbotron">
-          <form class="form-inline" required="true" action="/apps" method="post">
-            <textarea  style="width:100%;"  rows="10" name="text">{{html}}</textarea>
-            <input class="btn btn-md  " type="submit" value="end">
-            <textarea style="width:100%;" rows="10" name="result">{{data}}</textarea>
-          </form>
+      <div class="container">
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="color: #fff;" href="#">Kitabot</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+<!--style>
+    .wrapper { float: left; clear: left; display: table; table-layout: fixed; }
+    img.img-responsive { display: table-cell; max-width: 100%; }
+</style-->
+
+<div class="wrapper col-md-3">
+    <img class="img-responsive" src="/static/2016-1.jpg"/>
+</div>
+
+<form class="form-inline" required="true" action="/apps" method="POST">
+    <textarea style="width:100%; background-color: #ffffff;" rows="10" name="result" disabled>bot > {{data}}</textarea>
+    <br></br>
+    <div class="form-group">
+      <div class="input-group">
+          <input  class="form-control" placeholder="your message here" type="text" style="width:100%;" required="true" rows="1" name="text" style="font-size: 30px;">{{html}} </input>
+          <span class="input-group-btn"><button class="btn btn-default btn-success" type="submit">send</button>
+          </span>
+        </div>
       </div>
     </div>
-
-</div>
-</div>
-  </div>
-</div>
-  </body>
-
+</form>
 </body>
+
 <script type="application/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
 <script type="application/javascript" src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
-
 </html>
