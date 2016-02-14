@@ -15,7 +15,6 @@ def homepage():
 @app.route('/apps', methods=['GET','POST'])
 def echo():
     answer = bot.respond(request.form['text'])
-<<<<<<< HEAD
     return render_template("index.html", data=answer)
 
 if __name__ == "__main__":
@@ -28,9 +27,5 @@ if __name__ == "__main__":
 	else:
 		print '{} <port>'.format(sys.argv[0])
 		sys.exit(0)
-=======
-    return render_template("index.html",data=answer)
 
-if __name__ == "__main__":
-	app.run(threaded=True, debug = True, host='0.0.0.0', port=8888, passthrough_errors=True)
->>>>>>> 7984a176d9d69a77112dcc9dfd9e8031b6c7e7c2
+
